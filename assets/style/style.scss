@@ -1,0 +1,117 @@
+/* Font(s) */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+/* Colors */
+$background-color: #b0413e;
+$text-white: #eff1f3;
+
+
+/* Resets */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    background: $background-color;
+    background: radial-gradient(circle, $background-color 0%, darken($background-color, 5%) 100%);
+    font: {
+        family: 'Poppins', sans-serif;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    header {
+        display: flex;
+
+        .maintenance-text {
+            margin-left: 1rem;
+            p {
+                font: {
+                    size: 3rem;
+                    weight: bold;
+                }
+                text-transform: uppercase;
+                color: $text-white;
+            }
+        }
+    }
+
+    main {
+        padding: 2rem 10rem;
+        text-align: center;
+        color: darken($text-white, 5%);
+        font: {
+            size: 2rem;
+            weight: 500;
+        }
+    }
+
+    footer {
+        text-align: center;
+
+        span {
+            color: transparentize($text-white, .15);
+
+            a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+/* Media Queries (responsive) */
+
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        header {
+            .maintenance-logo img {
+                width: 6rem;
+            }
+
+            .maintenance-text p {
+                font-size: 2rem;
+            }
+        }
+
+        main {
+            padding: .2rem 1rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    html {
+        font-size: 14px;
+    }
+
+    .container {
+        main {
+            padding: 1rem 5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 16px;
+    }
+}
